@@ -1,0 +1,4 @@
+C:\Users\jinqiu\.CLion2016.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/jinqiu/Desktop/mltool
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug

@@ -1,0 +1,2 @@
+/usr/bin/ar.exe qc libperceptron.a  CMakeFiles/perceptron.dir/perceptron.cpp.o
+/usr/bin/ranlib.exe libperceptron.a
