@@ -10,7 +10,11 @@
 
 MLTOOL_BEGIN
     PERCEPTRON_BEGIN
+        class SimpleWeightUpdates
+        {
+        public:
 
+        };
 
 
     PERCEPTRON_END

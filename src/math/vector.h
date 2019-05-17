@@ -258,6 +258,11 @@ public:
     /** Component-wise division by scalar. */
     Vector<T,N> operator/ (T const& rhs) const;
 
+    /* --------------------- Initialization operation --------------------- */
+
+    /** Random numbers producing uniform distribution between 0 and 1 */
+    Vector<T,N> randu(int min = 0,int max = 1);
+
 protected:
     T v[N];
 };
@@ -796,6 +801,24 @@ inline Vector<T,N>
 operator- (T const& s, Vector<T,N> const& v)
 {
     return -v + s;
+}
+
+/* --------------------- Initialization operation --------------------- */
+
+template <typename T,int N>
+Vector<T,N> Vector<T,N>::randu(int min, int max)
+{
+    if(min > max) std::swap(min,max);
+
+    std::mt19937 rng;
+    rng.seed(std::random_device()());
+
+    std::uniform_real_distribution<T> distribution(min,max);
+    for(int i = 0; i < N; ++i){
+        v[i] = distribution(rng);
+    }
+
+    return *this;
 }
 
 MATH_NAMESPACE_END

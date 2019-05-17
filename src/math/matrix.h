@@ -15,6 +15,7 @@
 #include <utility>
 #include <numeric>
 #include <ostream>
+#include <random>
 
 #include "math/defines.h"
 #include "math/algo.h"
@@ -210,6 +211,8 @@ public:
 
     /* --------------------- Initialization operation --------------------- */
 
+    /** Random numbers producing uniform distribution between 0 and 1 */
+    Matrix<T,N,M> randu(int min=0,int max=1);
 
 protected:
     T m[N * M];
@@ -716,6 +719,25 @@ inline Matrix<T,N,M>
 Matrix<T,N,M>::operator/ (T const& rhs) const
 {
     return Matrix<T,N,M>(*this) /= rhs;
+}
+
+/* --------------------- Initialization operation --------------------- */
+
+template <typename T,typename N,typename M>
+inline Matrix<T,N,M>
+Matrix<T,N,M>::randu(int min=0,int max=1)
+{
+    if(min > max) std::swap(min,max);
+
+    std::mt19937 rng;
+    rng.seed(std::random_device()());
+
+    std::uniform_real_distribution<T> distribution(min,max);
+    for(int i = 0; i < M * N; ++i){
+        m[i] = distribution(rng);
+    }
+
+    return *this;
 }
 
 MATH_NAMESPACE_END

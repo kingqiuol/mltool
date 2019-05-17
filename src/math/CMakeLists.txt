@@ -9,6 +9,8 @@ set(HEADERS
         algo.h
         defines.h
         matrix.h
+        matrix_qr.h
+        matrix_svd.h
         matrix_tools.h
         vector.h
         )
