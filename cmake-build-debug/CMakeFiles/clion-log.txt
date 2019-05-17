@@ -1,4 +1,19 @@
 C:\Users\jinqiu\.CLion2016.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/jinqiu/Desktop/mltool
--- Configuring done
--- Generating done
--- Build files have been written to: /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug
+CMake Error at src/CMakeLists.txt:3 (add_subdirectory):
+  The source directory
+
+    /cygdrive/c/Users/jinqiu/Desktop/mltool/src/io
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/CMakeLists.txt:4 (add_subdirectory):
+  The source directory
+
+    /cygdrive/c/Users/jinqiu/Desktop/mltool/src/utils
+
+  does not contain a CMakeLists.txt file.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles/CMakeOutput.log".
