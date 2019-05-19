@@ -15,7 +15,6 @@ MLTOOL_BEGIN
         public:
             virtual ~DataLoader();
             virtual void load_data(const std::string &);
-            virtual void save_model(const std::string &);
         };
 
     IO_END

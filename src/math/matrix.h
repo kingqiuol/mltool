@@ -79,6 +79,9 @@ public:
     /** Fills all vector elements with the given value. */
     Matrix<T,N,M>& fill (T const& value);
 
+    /** Copy data from vector container into matrix*/
+    Matrix<T,N,M>& copy(const std::vector<std::vector<T>>& );
+
     /** Tests if the matrix is square. */
     bool is_square (void) const;
 
@@ -302,6 +305,9 @@ Matrix<T,N,M>::fill (T const& value)
     std::fill(m, m + N * M, value);
     return *this;
 }
+
+template <typename T, int N, int M>
+inline
 
 template <typename T, int N, int M>
 inline bool
