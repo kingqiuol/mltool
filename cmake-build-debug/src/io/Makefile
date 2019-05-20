@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/src/io/CMakeFiles/progress.marks
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/io/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/io/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/io/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/io/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named perceptron
+# Convenience name for target.
+src/io/CMakeFiles/io.dir/rule:
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/io/CMakeFiles/io.dir/rule
+.PHONY : src/io/CMakeFiles/io.dir/rule
 
-# Build rule for target.
-perceptron: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 perceptron
-.PHONY : perceptron
+# Convenience name for target.
+io: src/io/CMakeFiles/io.dir/rule
 
-# fast build rule for target.
-perceptron/fast:
-	$(MAKE) -f src/core/perceptron/CMakeFiles/perceptron.dir/build.make src/core/perceptron/CMakeFiles/perceptron.dir/build
-.PHONY : perceptron/fast
-
-#=============================================================================
-# Target rules for targets named io
-
-# Build rule for target.
-io: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 io
 .PHONY : io
 
 # fast build rule for target.
 io/fast:
-	$(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/build
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/build
 .PHONY : io/fast
+
+classifier_dataloader.o: classifier_dataloader.cpp.o
+
+.PHONY : classifier_dataloader.o
+
+# target to build an object file
+classifier_dataloader.cpp.o:
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/classifier_dataloader.cpp.o
+.PHONY : classifier_dataloader.cpp.o
+
+classifier_dataloader.i: classifier_dataloader.cpp.i
+
+.PHONY : classifier_dataloader.i
+
+# target to preprocess a source file
+classifier_dataloader.cpp.i:
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/classifier_dataloader.cpp.i
+.PHONY : classifier_dataloader.cpp.i
+
+classifier_dataloader.s: classifier_dataloader.cpp.s
+
+.PHONY : classifier_dataloader.s
+
+# target to generate assembly for a file
+classifier_dataloader.cpp.s:
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/classifier_dataloader.cpp.s
+.PHONY : classifier_dataloader.cpp.s
 
 # Help Target
 help:
@@ -144,8 +160,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... perceptron"
 	@echo "... io"
+	@echo "... classifier_dataloader.o"
+	@echo "... classifier_dataloader.i"
+	@echo "... classifier_dataloader.s"
 .PHONY : help
 
 
@@ -157,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

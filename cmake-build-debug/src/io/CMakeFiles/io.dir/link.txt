@@ -1,0 +1,2 @@
+/usr/bin/ar.exe qc libio.a  CMakeFiles/io.dir/classifier_dataloader.cpp.o
+/usr/bin/ranlib.exe libio.a

@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/c/Users/jinqiu/Desktop/mltool/src
+# Install script for directory: /cygdrive/c/Users/jinqiu/Desktop/mltool/src/io
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -25,12 +25,5 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   else()
     set(CMAKE_INSTALL_COMPONENT)
   endif()
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/src/core/cmake_install.cmake")
-  include("/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/src/io/cmake_install.cmake")
-
 endif()
 

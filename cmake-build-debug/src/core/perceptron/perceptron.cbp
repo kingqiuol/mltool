@@ -5,7 +5,7 @@
 		<Option title="perceptron"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\core\;CMake Files\src\core\perceptron\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\core\;CMake Files\src\core\perceptron\;CMake Files\src\io\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/src/core/perceptron"/>
@@ -75,6 +75,9 @@
 		<Unit filename="/cygdrive/c/Users/jinqiu/Desktop/mltool/src/core/perceptron/perceptron.cpp">
 			<Option target="perceptron"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/jinqiu/Desktop/mltool/src/core/perceptron/perceptron.h">
+			<Option target="perceptron"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/jinqiu/Desktop/mltool/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
@@ -89,6 +92,12 @@
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/jinqiu/Desktop/mltool/src/core/perceptron/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\core\perceptron\"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/jinqiu/Desktop/mltool/src/io/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\io\"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/jinqiu/Desktop/mltool/src/io/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\io\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
