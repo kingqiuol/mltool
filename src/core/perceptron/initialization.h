@@ -11,8 +11,6 @@
 
 MLTOOL_BEGIN
     PERCEPTRON_BEGIN
-
-
         class initialization {
         public:
             initialization() {}

@@ -306,8 +306,16 @@ Matrix<T,N,M>::fill (T const& value)
     return *this;
 }
 
-template <typename T, int N, int M>
-inline
+template <typename T,int N,int M>
+inline Matrix<T,N,M>&
+Matrix<T,N,M>::copy(const std::vector<std::vector<T>> &vec)
+{
+    for(int i=0;i<N;++i){
+        std::copy(vec[i].begin(),vec[i].end(),m+i*M);
+    }
+
+    return *this;
+}
 
 template <typename T, int N, int M>
 inline bool

@@ -1,6 +1,11 @@
-//
-// Created by jinqiu on 19-5-19.
-//
+/*
+ * Copyright (C) 2015, Simon Fuhrmann
+ * TU Darmstadt - Graphics, Capture and Massively Parallel Computing
+ * All rights reserved.
+ *
+ * This software may be modified and distributed under the terms
+ * of the BSD 3-Clause license. See the LICENSE.txt file for details.
+ */
 
 #include "classifier_dataloader.h"
 
@@ -32,7 +37,18 @@ MLTOOL_BEGIN
             this->numDatasets= static_cast<int>(vec_datasets.size());
             this->numFeatures= static_cast<int>(vec_datasets[0].size()-1);
 
-            datasets.copy()
+            Matrix<double ,numDatasets,numFeatures+1> data;
+            data.copy(vec_datasets);
+
+            for(int i=0;i<numDatasets;++i){
+                for(int j=0;j<=numFeatures;++j){
+                    if(j<numFeatures){
+                        datasets[i*numDatasets+j]=data[i*(numFeatures+1)+j];
+                    }else{
+                        labels[i]=data[i*(numFeatures+1)+j];
+                    }
+                }
+            }
         }
 
     IO_END
