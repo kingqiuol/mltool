@@ -39,6 +39,8 @@ IO_BEGIN
         /** Number of features obtained*/
         int getNumbersOfFestures() const{return numFeatures;}
 
+        /** */
+        void one_hot(Matrix<int,numDatasets,1> labels);
     public:
         Matrix<double ,numDatasets,numFeatures> datasets;
         Matrix<int ,numDatasets,1> labels;

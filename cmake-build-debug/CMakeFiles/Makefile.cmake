@@ -35,6 +35,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/CMakeLists.txt"
   "../src/core/CMakeLists.txt"
   "../src/core/perceptron/CMakeLists.txt"
+  "../src/io/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -49,9 +50,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/core/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/core/perceptron/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/io/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/core/perceptron/CMakeFiles/perceptron.dir/DependInfo.cmake"
+  "src/io/CMakeFiles/io.dir/DependInfo.cmake"
   )

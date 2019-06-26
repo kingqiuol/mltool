@@ -64,16 +64,19 @@ CMAKE_BINARY_DIR = /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug
 
 # Convenience name for "all" pass in the directory.
 src/all: src/core/all
+src/all: src/io/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/core/clean
+src/clean: src/io/clean
 
 .PHONY : src/clean
 
 # Convenience name for "preinstall" pass in the directory.
 src/preinstall: src/core/preinstall
+src/preinstall: src/io/preinstall
 
 .PHONY : src/preinstall
 
@@ -120,7 +123,7 @@ src/core/perceptron/preinstall:
 src/core/perceptron/CMakeFiles/perceptron.dir/all:
 	$(MAKE) -f src/core/perceptron/CMakeFiles/perceptron.dir/build.make src/core/perceptron/CMakeFiles/perceptron.dir/depend
 	$(MAKE) -f src/core/perceptron/CMakeFiles/perceptron.dir/build.make src/core/perceptron/CMakeFiles/perceptron.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target perceptron"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target perceptron"
 .PHONY : src/core/perceptron/CMakeFiles/perceptron.dir/all
 
 # Include target in all.
@@ -147,6 +150,61 @@ src/core/perceptron/CMakeFiles/perceptron.dir/clean:
 
 # clean rule for target.
 clean: src/core/perceptron/CMakeFiles/perceptron.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/io
+
+# Convenience name for "all" pass in the directory.
+src/io/all: src/io/CMakeFiles/io.dir/all
+
+.PHONY : src/io/all
+
+# Convenience name for "clean" pass in the directory.
+src/io/clean: src/io/CMakeFiles/io.dir/clean
+
+.PHONY : src/io/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/io/preinstall:
+
+.PHONY : src/io/preinstall
+
+#=============================================================================
+# Target rules for target src/io/CMakeFiles/io.dir
+
+# All Build rule for target.
+src/io/CMakeFiles/io.dir/all:
+	$(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/depend
+	$(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target io"
+.PHONY : src/io/CMakeFiles/io.dir/all
+
+# Include target in all.
+all: src/io/CMakeFiles/io.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/io/CMakeFiles/io.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/io/CMakeFiles/io.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/jinqiu/Desktop/mltool/cmake-build-debug/CMakeFiles 0
+.PHONY : src/io/CMakeFiles/io.dir/rule
+
+# Convenience name for target.
+io: src/io/CMakeFiles/io.dir/rule
+
+.PHONY : io
+
+# clean rule for target.
+src/io/CMakeFiles/io.dir/clean:
+	$(MAKE) -f src/io/CMakeFiles/io.dir/build.make src/io/CMakeFiles/io.dir/clean
+.PHONY : src/io/CMakeFiles/io.dir/clean
+
+# clean rule for target.
+clean: src/io/CMakeFiles/io.dir/clean
 
 .PHONY : clean
 
