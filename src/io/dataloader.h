@@ -19,7 +19,7 @@ MLTOOL_BEGIN
         class DataLoader{
         public:
             virtual ~DataLoader();
-            virtual void load_data(const std::string &);
+            virtual void load_data(const std::string &) = 0;
         };
 
     IO_END

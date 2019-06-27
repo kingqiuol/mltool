@@ -13,7 +13,7 @@ MLTOOL_BEGIN
         class SimpleWeightUpdates
         {
         public:
-
+            void UpdateWeights();
         };
 
 

@@ -5,30 +5,35 @@
 #ifndef MLTOOL_INITIALIZATION_H
 #define MLTOOL_INITIALIZATION_H
 
-#include <src/math/matrix.h>
-#include <src/math/vector.h>
-#include <mltool.h>
+#include <src/math/mat.h>
+#include <src/core/mltool.h>
 
 MLTOOL_BEGIN
     PERCEPTRON_BEGIN
-        class initialization {
-        public:
-            initialization() {}
+
+        class RandomInitialization{
+            RandomInitialization(){}
 
             template<typename DataType, int numFeatures, int numClasses>
             inline static void RandomInitialization(Matrix<DataType, numFeatures, numClasses> &weights,
-                                                    Vector<DataType, numClasses> &biases) {
+                                                    Vector<int, numClasses> &biases) {
                 weights.randu();
                 biases.randu();
             }
+        };
+
+        class ZerosInitialization{
+            ZerosInitialization(){}
 
             template<typename DataType, int numFeatures, int numClasses>
             inline static void ZerosInitialization(Matrix<DataType, numFeatures, numClasses> &weights,
-                                                   Vector<DataType, numClasses> &biases){
+                                                   Vector<int, numClasses> &biases){
                 weights.fill(0);
                 biases.fill(0);
             }
         };
+
+
     PERCEPTRON_END
 MLTOOL_END
 

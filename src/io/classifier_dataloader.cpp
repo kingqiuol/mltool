@@ -37,23 +37,20 @@ MLTOOL_BEGIN
             this->numDatasets= static_cast<int>(vec_datasets.size());
             this->numFeatures= static_cast<int>(vec_datasets[0].size()-1);
 
-<<<<<<< HEAD
-            Matrix<double ,numDatasets,numFeatures+1> data;
-            data.copy(vec_datasets);
+            Mat data(vec_datasets);
 
             for(int i=0;i<numDatasets;++i){
                 for(int j=0;j<=numFeatures;++j){
                     if(j<numFeatures){
-                        datasets[i*numDatasets+j]=data[i*(numFeatures+1)+j];
+                        datasets(i,j)=data(i,j);
                     }else{
-                        labels[i]=data[i*(numFeatures+1)+j];
+                        labels(i,0)=data(i,j);
                     }
                 }
-=======
+
             for(auto i=0;i<vec_datasets.size();++i){
-                std::copy(vec_datasets[i].begin(),vec_datasets[i].end()-1,datasets.begin()+i*numFeatures);
+                std::copy(vec_datasets[i].begin(),vec_datasets[i].end()-1,datasets.data[i]);
                 labels(i,0)= static_cast<int>(*(vec_datasets[i].end()-1));
->>>>>>> 1f8555dd16e6571664ce6645e68e28f71d3fb08e
             }
         }
 

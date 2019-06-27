@@ -13,10 +13,10 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 #include <src/core/mltool.h>
-#include <src/math/matrix.h>
-#include <src/math/vector.h>
+#include <src/math/mat.h>
 #include "dataloader.h"
 
 MLTOOL_BEGIN
@@ -38,12 +38,9 @@ IO_BEGIN
 
         /** Number of features obtained*/
         int getNumbersOfFestures() const{return numFeatures;}
-
-        /** */
-        void one_hot(Matrix<int,numDatasets,1> labels);
     public:
-        Matrix<double ,numDatasets,numFeatures> datasets;
-        Matrix<int ,numDatasets,1> labels;
+        Mat datasets;
+        Mat labels;
     private:
         int numDatasets; //Number of data sets
         int numFeatures; //Number of classification features

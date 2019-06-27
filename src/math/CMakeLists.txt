@@ -4,16 +4,10 @@ set(CMAKE_CXX_FLAGS "-fPIC")
 
 include_directories("../..")
 
-set(HEADERS
-        accum.h
-        algo.h
-        defines.h
-        matrix.h
-        matrix_qr.h
-        matrix_svd.h
-        matrix_tools.h
-        vector.h
-        )
+set(HEADERS defines.h
+        mat.h)
 
-add_library(math ${HEADERS})
+set(SOURCES mat.cpp)
+
+add_library(math ${HEADERS} ${SOURCES})
 
