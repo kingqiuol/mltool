@@ -2,10 +2,13 @@
 // Created by jinqiu on 2019/6/27.
 //
 #include "mat.h"
+
+MATH_NAMESPACE_BEGIN
 /* ------------------------ Constructors ---------------------- */
 
 /** Constructing Matrix Based on Matrix Row/Column. */
 Mat::Mat(int row, int col) {
+        std::cout<<row<<std::endl;
     this->rows = row;
     this->cols = col;
 
@@ -26,6 +29,18 @@ Mat::Mat(const Mat &other) {
         std::copy(other.data[i], other.data[i] + cols, this->data[i]);
     }
 }
+    /** Constructing matrix by vector  */
+    Mat::Mat(std::vector<std::vector<float >> &vec_data)
+    {
+        this->rows=vec_data.size();
+        this->cols=vec_data[0].size();
+
+        this->data = new float *[rows]();
+        for (int i = 0; i < rows; ++i) {
+            this->data[i] = new float[cols]();
+            std::copy(vec_data[i].begin(), vec_data[i].end(), this->data[i]);
+        }
+    }
 
 /* ------------------------ Constructors ---------------------- */
 
@@ -63,7 +78,7 @@ bool Mat::is_square(void) const {
 /** Returns a row of the matrix as vector. */
 Mat Mat::row(int index) const {
     Mat tmp(1, cols);
-    std::copy(data[index], data[index] + cols, tmp.data);
+    std::copy(data[index], data[index] + cols, tmp.data[0]);
 
     return tmp;
 }
@@ -73,7 +88,7 @@ Mat Mat::col(int index) const {
     Mat tmp(rows, 1);
 
     for (int i = 0; i < rows; ++i) {
-        tmp[0][i] = data[index][i];
+        tmp(0,i) = data[index][i];
     }
 
     return tmp;
@@ -208,13 +223,13 @@ Mat Mat::transposed(void) const {
 
 /** Matrix with matrix multiplication. */
 Mat Mat::mult(const Mat &rhs) const {
-    assert(this.cols == rhs.rows);
+    assert(this->cols == rhs.rows);
 
     Mat tmp(rows, rhs.cols);
     for (int i = 0; i < tmp.rows; ++i) {
         for (int j = 0; j < tmp.cols; ++j) {
             Mat r_cols = rhs.col(j).transpose();
-            tmp.data[i][j] = std::inner_product(data[i], data[i] + cols, r_cols.data, 0);
+            tmp.data[i][j] = std::inner_product(data[i], data[i] + cols, r_cols.data[0], 0);
         }
     }
 
@@ -282,7 +297,7 @@ Mat &Mat::operator=(const Mat &rhs) {
 
 /** Component-wise negation. */
 Mat Mat::operator-(void) const {
-    return this->negate();
+    return this->negated();
 }
 
 /** Self-substraction with other matrix. */
@@ -303,7 +318,7 @@ Mat Mat::operator-(const Mat &rhs) const {
 }
 
 /** Self-addition with other matrix. */
-Matr &Mat::operator+=(const Mat &rhs) {
+Mat &Mat::operator+=(const Mat &rhs) {
     assert(rhs.rows == rows);
     assert(rhs.cols == cols);
 
@@ -380,16 +395,22 @@ Mat Mat::operator/(const float &rhs) const {
 
 /** Print matrix information  */
 std::ostream &operator<<(std::ostream &out, Mat &rhs) {
-    out << "[ ";
+    out << "[";
     for (int i = 0; i < rhs.rows; ++i) {
         out << "[ ";
         for (int j = 0; j < rhs.cols; ++j) {
-            out << ths(i, j) << " ,";
+            if(j==rhs.cols-1){
+                out << rhs(i, j);
+            }else{
+                out << rhs(i, j) << " ,";
+            }
+
         }
         out << " ]";
         if (i == rhs.rows - 1) {
-            out << " ]";
+            out << "]";
         }
         out << std::endl;
     }
 }
+MATH_NAMESPACE_END

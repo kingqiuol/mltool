@@ -9,7 +9,7 @@
 #include <iostream>
 #include <algorithm>
 
-#include <defines.h>
+#include "defines.h"
 
 MATH_NAMESPACE_BEGIN
 
@@ -27,7 +27,7 @@ public:
     Mat(const Mat &other);
 
     /** Constructing matrix by vector  */
-    Mat(std::vector<std::vector<double >>&);
+    Mat(std::vector<std::vector<float >>&);
 
     /* ------------------------ Constructors ---------------------- */
 
@@ -112,7 +112,7 @@ public:
     Mat operator-(const Mat &rhs) const;
 
     /** Self-addition with other matrix. */
-    Matr &operator+=(const Mat &rhs);
+    Mat &operator+=(const Mat &rhs);
 
     /** Addition with other matrix. */
     Mat operator+(const Mat &rhs) const;

@@ -9,5 +9,7 @@ set(HEADERS defines.h
 
 set(SOURCES mat.cpp)
 
-add_library(math ${HEADERS} ${SOURCES})
+project(test_matrix)
+add_executable(test_matrix  test_matrix.cpp ${HEADERS} ${SOURCES})
 
+add_library(math ${HEADERS} ${SOURCES})

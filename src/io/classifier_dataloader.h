@@ -39,8 +39,8 @@ IO_BEGIN
         /** Number of features obtained*/
         int getNumbersOfFestures() const{return numFeatures;}
     public:
-        Mat datasets;
-        Mat labels;
+        math::Mat datasets;
+        math::Mat labels;
     private:
         int numDatasets; //Number of data sets
         int numFeatures; //Number of classification features
